@@ -6,13 +6,13 @@ import (
 	"github.com/google/uuid"
 )
 
-// NewUuid generates an UUID with the posibility 
+// NewUuid generates an UUID with the posibility
 // to remove the hyphens
-func NewUuid(withoutHyphen bool) string {
+func (pf *ProgrammingFunctions) NewUuid(withoutHyphen bool) string {
 	uuidWithHyphen := uuid.New()
 
 	if withoutHyphen {
-		return strings.Replace(uuidWithHyphen.String(),"-", "", -1)
+		return strings.Replace(uuidWithHyphen.String(), "-", "", -1)
 	}
 	return uuidWithHyphen.String()
 }
